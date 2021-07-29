@@ -24,6 +24,11 @@ public class BookController {
         return bookService.getBookById(id);
     }
 
+    @PutMapping("/{id}/update")
+    public Book updateBook(@PathVariable int id, @RequestBody Book book) {
+        return bookService.updateBook(book);
+    }
+
     @PostMapping()
     public Book postBook(@RequestBody Book book) {
         return bookService.saveBook(book);
