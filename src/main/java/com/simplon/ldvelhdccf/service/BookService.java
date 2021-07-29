@@ -24,4 +24,6 @@ public class BookService {
     public Book saveBook(Book book) {
         return bookRepository.save(book);
     }
+
+    public void deleteBook(int id) {  bookRepository.deleteById(id); }
 }
