@@ -1,6 +1,5 @@
-INSERT into roles (id, name) values (1, 'ROLE_USER'),
-(2, 'ROLE_PLAYER'),
-(3, 'ROLE_EDITOR');
+INSERT into roles (id, name) values (1, 'USER'),
+(2, 'ADMIN');
 
 INSERT INTO book (id, author, title) VALUES
 (1, 'Charles', 'Charlito'),
