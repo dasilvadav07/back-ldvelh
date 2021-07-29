@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Table(name = "Book")
@@ -25,5 +26,7 @@ public class Book {
     @Enumerated(EnumType.STRING)
     @Column(name = "TypeName")
     private Set<Type> type;
+    @OneToMany
+    private List<Chapter> chapter;
 
 }
