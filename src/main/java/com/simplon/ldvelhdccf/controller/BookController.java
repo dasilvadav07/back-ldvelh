@@ -29,7 +29,7 @@ public class BookController {
         return bookService.updateBook(book);
     }
 
-    @PostMapping()
+    @PostMapping("/create")
     public Book postBook(@RequestBody Book book) {
         return bookService.saveBook(book);
     }
