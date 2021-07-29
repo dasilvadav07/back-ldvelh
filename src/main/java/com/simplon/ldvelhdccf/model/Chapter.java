@@ -3,10 +3,8 @@ package com.simplon.ldvelhdccf.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Map;
 
 @Getter
 @Setter
@@ -15,9 +13,14 @@ public class Chapter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String title;
     private String content;
-    private boolean intro;
-    private boolean end;
+    @Enumerated(EnumType.STRING)
+    private ChapterRole chapterRole;
+    @Enumerated(EnumType.STRING)
+    private  Status status;
+    private String caption;
+    private String question;
+    @ManyToMany
+    private Map<Integer, Chapter> options;
 
 }
