@@ -22,4 +22,12 @@ public class UserController {
     public Iterable<User> listUser() {
         return userService.getAllUser();
     }
+
+//    @GetMapping("/creators")
+//    public Iterable<User> listCreators() {
+//       if(User.getBooksCreated()) {
+//
+//       }
+//           return userService.getAllUser();
+//    }
 }

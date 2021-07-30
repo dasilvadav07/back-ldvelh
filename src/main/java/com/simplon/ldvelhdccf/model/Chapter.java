@@ -1,5 +1,6 @@
 package com.simplon.ldvelhdccf.model;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,6 +10,7 @@ import java.util.Map;
 @Getter
 @Setter
 @Entity
+@Data
 public class Chapter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,5 +24,7 @@ public class Chapter {
     private String question;
     @ManyToMany
     private Map<Integer, Chapter> options;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Book book;
 
 }

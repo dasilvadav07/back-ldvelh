@@ -1,5 +1,6 @@
 package com.simplon.ldvelhdccf.controller;
 
+import com.simplon.ldvelhdccf.dto.BookDto;
 import com.simplon.ldvelhdccf.model.Book;
 import com.simplon.ldvelhdccf.service.BookService;
 import lombok.Data;
@@ -30,8 +31,8 @@ public class BookController {
     }
 
     @PostMapping("/create")
-    public Book postBook(@RequestBody Book book) {
-        return bookService.saveBook(book);
+    public Book postBook(@RequestBody BookDto bookDto) {
+        return bookService.saveBook(bookDto);
     }
 
     @DeleteMapping("/{id}")

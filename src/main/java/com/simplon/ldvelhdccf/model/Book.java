@@ -18,15 +18,23 @@ public class Book {
     private int id;
     @Column(name = "title")
     private String title;
-    @Column(name = "author")
-    private String author;
+
+//    @ManyToOne
+//    @JoinColumn(name ="FK_userId")
+//    private User user;
+
     @ElementCollection(targetClass = Type.class)
     @CollectionTable(name = "BookType",
             joinColumns = @JoinColumn(name = "BookId"))
     @Enumerated(EnumType.STRING)
     @Column(name = "TypeName")
     private Set<Type> type;
-    @OneToMany
-    private List<Chapter> chapter;
+
+    public Book(String title, Set<Type> type) {
+        this.title = title;
+        this.type = type;
+    }
+//    @OneToMany
+//    private List<Chapter> chapter;
 
 }
