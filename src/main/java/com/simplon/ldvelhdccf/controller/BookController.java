@@ -1,5 +1,6 @@
 package com.simplon.ldvelhdccf.controller;
 
+import com.simplon.ldvelhdccf.dto.BookDto;
 import com.simplon.ldvelhdccf.model.Book;
 import com.simplon.ldvelhdccf.model.Chapter;
 import com.simplon.ldvelhdccf.service.BookService;
@@ -32,16 +33,16 @@ public class BookController {
         return bookService.updateBook(book);
     }
 
-    @PostMapping()
-    public Book postBook(@RequestBody Book book) {
-        return bookService.saveBook(book);
+    @PostMapping("/create")
+    public Book postBook(@RequestBody BookDto bookDto) {
+        return bookService.saveBook(bookDto);
     }
 
     @DeleteMapping("/{id}")
     public void removeBook(@PathVariable int id) { bookService.deleteBook(id); }
 
     @GetMapping("/{id}/chapter")
-    public List<Chapter> getChapters(@PathVariable int id) { return bookService.getBookById(id).getChapter(); }
+    public List<Chapter> getChapters(@PathVariable int id) { return bookService.getBookById(id).getChapter();}
 
     @PostMapping("/{id}/chapter")
     public Book postChapterInBook(@PathVariable int id, @RequestBody Chapter chapter) {

@@ -20,9 +20,6 @@ public class ChapterController {
         return chapterService.getChapterById(id);
     }
 
-//    @DeleteMapping("/{id}")
-//    public void removeChapter(@PathVariable int id) { chapterService.deleteChapter(id); }
-
     @PutMapping("/{id}")
     public Chapter updateChapter(@PathVariable int id, @RequestBody Chapter chapter) {
         return chapterService.saveChapter(chapter);
