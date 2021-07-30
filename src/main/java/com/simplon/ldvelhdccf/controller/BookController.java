@@ -1,10 +1,13 @@
 package com.simplon.ldvelhdccf.controller;
 
 import com.simplon.ldvelhdccf.model.Book;
+import com.simplon.ldvelhdccf.model.Chapter;
 import com.simplon.ldvelhdccf.service.BookService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Data
 @RestController
@@ -36,4 +39,16 @@ public class BookController {
 
     @DeleteMapping("/{id}")
     public void removeBook(@PathVariable int id) { bookService.deleteBook(id); }
+
+    @GetMapping("/{id}/chapter")
+    public List<Chapter> getChapters(@PathVariable int id) { return bookService.getBookById(id).getChapter(); }
+
+    @PostMapping("/{id}/chapter")
+    public Book postChapterInBook(@PathVariable int id, @RequestBody Chapter chapter) {
+        return bookService.bookAddChapter(id, chapter);
+    }
+
+    @DeleteMapping("/{id}/chapter/{chapterId}")
+    public Book removeChapter(@PathVariable("id") int id, @PathVariable ("chapterId") int chapterId) { return bookService.bookDeleteChapter(id, chapterId); }
+
 }
