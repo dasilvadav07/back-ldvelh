@@ -19,7 +19,7 @@ INSERT into roles (id, name) values (1, 'USER'),
 --(NULL);
 --
 ----
---INSERT INTO `book_type` (`book_id`, `type_name`) VALUES
+--INSERT INTO book_type (book_id, type_name) VALUES
 --(1, 'SCIFI'),
 --(1, 'HORROR'),
 --(2, 'SCIFI'),

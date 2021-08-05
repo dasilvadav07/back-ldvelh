@@ -24,4 +24,9 @@ public class ChapterController {
     public Chapter updateChapter(@PathVariable int id, @RequestBody Chapter chapter) {
         return chapterService.saveChapter(chapter);
     }
+
+    @PostMapping("/{id}")
+    public Chapter postChapter(@PathVariable int id, @RequestBody Chapter chapter) {
+        return chapterService.saveChapter(chapter);
+    }
 }

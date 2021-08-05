@@ -21,9 +21,9 @@ public class Book {
     @Column(name = "title")
     private String title;
 
-    @ManyToOne
-    @JoinColumn(name ="FK_userId")
-    private User user;
+//    @ManyToOne
+//    @JoinColumn(name ="user_id")
+//    private User user;
 
     @ElementCollection(targetClass = Type.class)
     @CollectionTable(name = "BookType",
