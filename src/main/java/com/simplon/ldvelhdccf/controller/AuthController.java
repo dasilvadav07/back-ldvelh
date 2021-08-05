@@ -9,16 +9,19 @@ import java.util.stream.Collectors;
 import javax.validation.Valid;
 
 import com.simplon.ldvelhdccf.model.ERole;
+import com.simplon.ldvelhdccf.model.Library;
 import com.simplon.ldvelhdccf.model.Role;
 import com.simplon.ldvelhdccf.model.User;
 import com.simplon.ldvelhdccf.payload.request.LoginRequest;
 import com.simplon.ldvelhdccf.payload.request.SignupRequest;
 import com.simplon.ldvelhdccf.payload.response.JwtResponse;
 import com.simplon.ldvelhdccf.payload.response.MessageResponse;
+import com.simplon.ldvelhdccf.repository.LibraryRepository;
 import com.simplon.ldvelhdccf.repository.RoleRepository;
 import com.simplon.ldvelhdccf.repository.UserRepository;
 import com.simplon.ldvelhdccf.security.jwt.JwtUtils;
 import com.simplon.ldvelhdccf.security.services.UserDetailsImpl;
+import com.simplon.ldvelhdccf.service.LibraryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -42,6 +45,12 @@ public class AuthController {
 
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    LibraryController lybraryController;
+
+    @Autowired
+    LibraryService libraryService;
 
     @Autowired
     RoleRepository roleRepository;

@@ -46,7 +46,7 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 //
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private Library library;
 
     @OneToMany
@@ -61,6 +61,7 @@ public class User {
         this.username = username;
         this.email = email;
         this.password = password;
+        library = new Library();
     }
 
 
