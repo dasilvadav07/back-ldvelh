@@ -1,11 +1,13 @@
 package com.simplon.ldvelhdccf.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class BookInProgress {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,5 +21,9 @@ public class BookInProgress {
 
     private int chapter_id;
 
-
+    public BookInProgress(Book book) {
+        this.book = book;
+        achieved = false;
+        chapter_id = 0;
+    }
 }

@@ -1,27 +1,25 @@
 INSERT into roles (id, name) values (1, 'USER'),
 (2, 'ADMIN');
-
---INSERT INTO users (id, email, password, username, library_id) VALUES
---('1', 'charles@gmail.com', 'simplon12', 'Charles', NULL)
 --
---INSERT INTO book (id, title, user_id) VALUES ('1', 'Les tontons', '1');
-
---INSERT INTO book (id, title, user_id) VALUES (1, 'Les tontons', 1);
+--INSERT INTO `book` (`id`, `fk_user_id`, `title`) VALUES
+--(1, '0', 'Charlito'),
+--(2, '0', 'Charlito'),
+--(3, '1', 'Mumuh apprend Java'),
+--(4, '1', 'Denis le stremon'),
+--(5, '2', 'dominique');
 --
---INSERT into users (username, email, password) values
---('Charles', 'charles@gmail.com', 'simplon12');
-
---INSERT into library () values
---();
+--INSERT INTO `users` (`id`, `email`, `password`, `username`, `library_id`) VALUES
+--(NULL, 'moi@moi.com', NULL, 'moi', '0'),
+--(NULL, 'lui@lui.com', NULL, 'lui', '1'),
+--(NULL, 'toto@toto.com', NULL, 'toto', '2');
 --
---INSERT INTO book (id, author, title) VALUES
---(1, 'Charles', 'Charlito'),
---(2, 'Charles', 'Charlito'),
---(3, 'Charles', 'Mumuh apprend Java'),
---(4, 'Lamalice', 'Denis le stremon'),
---(5, 'dom', 'dominique');
+--INSERT INTO `library` (`id`) VALUES
+--(NULL),
+--(NULL),
+--(NULL);
 --
---INSERT INTO book_type (book_id, type_name) VALUES
+----
+--INSERT INTO `book_type` (`book_id`, `type_name`) VALUES
 --(1, 'SCIFI'),
 --(1, 'HORROR'),
 --(2, 'SCIFI'),
@@ -30,3 +28,19 @@ INSERT into roles (id, name) values (1, 'USER'),
 --(4, 'FUN'),
 --(5, 'MEDFAN'),
 --(5, 'SCIFI');
+----
+--INSERT INTO `chapter` (`id`, `caption`, `chapter_role`, `content`, `question`, `status`) VALUES
+--(1, 'legende', 'INTRO', 'im a legende', 'Rentrer ?', 'PARAM_START'),
+--(2, 'salut � tous', 'INTRO', 'coucou', 'Dire Bonjour ?', 'PARAM_START');
+----
+----
+--INSERT INTO `book_chapter` (`book_id`, `chapter_id`) VALUES
+--(1, 1),
+--(2, 2);
+----
+---- INSERT INTO `roles` (`id`, `name`) VALUES
+---- (1, 'ROLE_USER'),
+---- (2, 'ROLE_PLAYER'),
+---- (3, 'ROLE_EDITOR');
+----
+--select  1;

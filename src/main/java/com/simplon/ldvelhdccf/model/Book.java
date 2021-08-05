@@ -1,6 +1,8 @@
 package com.simplon.ldvelhdccf.model;
 
+import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -8,9 +10,9 @@ import java.util.List;
 import java.util.Set;
 
 @Table(name = "Book")
-@Getter
-@Setter
+@Data
 @Entity
+@NoArgsConstructor
 public class Book {
 
     @Id
@@ -19,9 +21,9 @@ public class Book {
     @Column(name = "title")
     private String title;
 
-//    @ManyToOne
-//    @JoinColumn(name ="FK_userId")
-//    private User user;
+    @ManyToOne
+    @JoinColumn(name ="FK_userId")
+    private User user;
 
     @ElementCollection(targetClass = Type.class)
     @CollectionTable(name = "BookType",
@@ -34,7 +36,7 @@ public class Book {
         this.title = title;
         this.type = type;
     }
-//    @OneToMany
-//    private List<Chapter> chapter;
+    @OneToMany
+    private List<Chapter> chapter;
 
 }

@@ -1,12 +1,12 @@
 package com.simplon.ldvelhdccf.model;
 
-
 import java.util.HashSet;
 import java.util.Set;
 
 public enum ERole {
-    USER,
-    ADMIN;
+    ROLE_USER,
+    ROLE_PLAYER,
+    ROLE_EDITOR;
 
     public static Set<ERole> ConvertFromString(Set<String> role) {
         Set<ERole> roles = new HashSet<>();

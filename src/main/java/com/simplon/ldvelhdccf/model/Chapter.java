@@ -24,7 +24,7 @@ public class Chapter {
     private String question;
     @ManyToMany
     private Map<Integer, Chapter> options;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Book book;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    private Book book;
 
 }

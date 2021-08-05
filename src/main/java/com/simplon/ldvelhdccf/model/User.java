@@ -45,17 +45,9 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
-//
+
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private Library library;
-
-    @OneToMany
-    private Set<Book> books;
-
-//    @OneToMany( targetEntity=Book.class, mappedBy="user" )
-//    private List<Book> booksCreated = new ArrayList<>();
-
-
 
     public User(String username, String email, String password) {
         this.username = username;
