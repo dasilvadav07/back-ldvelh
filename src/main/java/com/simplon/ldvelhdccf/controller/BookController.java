@@ -33,16 +33,24 @@ public class BookController {
         return bookService.updateBook(book);
     }
 
+    //    @PostMapping("/create")
+//    public Book postBook(@RequestBody BookDto bookDto) {
+//        return bookService.saveBook(bookDto);
+//    }
     @PostMapping("/create")
-    public Book postBook(@RequestBody BookDto bookDto) {
-        return bookService.saveBook(bookDto);
+    public Book postBook(@RequestBody Book book) {
+        return bookService.save(book);
     }
 
     @DeleteMapping("/{id}")
-    public void removeBook(@PathVariable int id) { bookService.deleteBook(id); }
+    public void removeBook(@PathVariable int id) {
+        bookService.deleteBook(id);
+    }
 
     @GetMapping("/{id}/chapter")
-    public List<Chapter> getChapters(@PathVariable int id) { return bookService.getBookById(id).getChapter();}
+    public List<Chapter> getChapters(@PathVariable int id) {
+        return bookService.getBookById(id).getChapter();
+    }
 
     @PostMapping("/{id}/chapter")
     public Book postChapterInBook(@PathVariable int id, @RequestBody Chapter chapter) {
@@ -50,6 +58,8 @@ public class BookController {
     }
 
     @DeleteMapping("/{id}/chapter/{chapterId}")
-    public Book removeChapter(@PathVariable("id") int id, @PathVariable ("chapterId") int chapterId) { return bookService.bookDeleteChapter(id, chapterId); }
+    public Book removeChapter(@PathVariable("id") int id, @PathVariable("chapterId") int chapterId) {
+        return bookService.bookDeleteChapter(id, chapterId);
+    }
 
 }

@@ -32,6 +32,10 @@ public class BookService {
         return bookRepository.findById(id).orElseThrow();
     }
 
+    public Book save(Book book) {
+        return bookRepository.save(book);
+    }
+
     public Book saveBook(BookDto bookDto) {
         var user = userRepository.findById(bookDto.getUser_id());
         var book = BookDto.convertToBook(bookDto);
