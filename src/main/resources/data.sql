@@ -1,5 +1,8 @@
 INSERT into roles (id, name) values (1, 'USER'),
 (2, 'ADMIN');
+
+INSERT INTO library (id) VALUES
+(1);
 --
 --INSERT INTO `book` (`id`, `fk_user_id`, `title`) VALUES
 --(1, '0', 'Charlito'),
@@ -9,14 +12,11 @@ INSERT into roles (id, name) values (1, 'USER'),
 --(5, '2', 'dominique');
 --
 INSERT INTO users (id, email, password, username, library_id) VALUES
-(NULL, 'lulu@gmail.com', '$2a$10$p4pYC3hT/Ft2Pl7kFKAH5.zyDM1qL7HdSWDjMUU0HGiq8WIIKd8om', 'lulu', '0'),
+(NULL, 'lulu@gmail.com', '$2a$10$p4pYC3hT/Ft2Pl7kFKAH5.zyDM1qL7HdSWDjMUU0HGiq8WIIKd8om', 'lulu', '1');
 --(NULL, 'lui@lui.com', NULL, 'lui', '1'),
 --(NULL, 'toto@toto.com', NULL, 'toto', '2');
 --
---INSERT INTO `library` (`id`) VALUES
---(NULL),
---(NULL),
---(NULL);
+
 --
 ----
 --INSERT INTO book_type (book_id, type_name) VALUES

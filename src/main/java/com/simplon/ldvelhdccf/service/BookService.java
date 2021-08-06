@@ -25,6 +25,9 @@ public class BookService {
     UserRepository userRepository;
 
     public Iterable<Book> getAllBook() {
+//        var user = userRepository.findById(bookDto.getUser_id());
+//        var book = BookDto.convertToBook(bookDto);
+//        user.get().getLibrary().getBooksCreated();
         return bookRepository.findAll();
     }
 
